@@ -1,10 +1,10 @@
 package com.example.medcontrol.ViewModel
 
-import MedicineDao
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
+import com.example.medcontrol.dao.MedicineDao
 import com.example.medcontrol.model.Medicine
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

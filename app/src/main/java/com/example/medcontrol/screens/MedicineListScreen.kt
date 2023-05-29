@@ -1,6 +1,7 @@
 package com.example.medcontrol.screens
 
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
@@ -29,7 +30,10 @@ fun MedicineListScreen(
         },
         floatingActionButton = {
             FloatingActionButton(
-                onClick = { /* Add Medicine Screen */ }
+                onClick = {
+                    // Navigate to the medicine addition screen
+                    // Navigation implementation is required
+                }
             ) {
                 Icon(Icons.Filled.Add, contentDescription = "Add Medicine")
             }
@@ -49,8 +53,15 @@ fun MedicineListScreen(
                 )
             }
         } else {
-            // Show the list of medicines
-            // ...
+            // Display the list of medicines
+            LazyColumn {
+                items(medicines.value?.size ?: 0) { index ->
+                    val medicine = medicines.value?.get(index)
+                    if (medicine != null) {
+                        MedicineListItem(medicine)
+                    }
+                }
+            }
         }
     }
 }
