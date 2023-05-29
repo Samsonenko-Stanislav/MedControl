@@ -14,11 +14,13 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.medcontrol.ViewModel.MedicineViewModel
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.livedata.observeAsState
+import androidx.navigation.NavController
 
 
 @Composable
 fun MedicineListScreen(
-    medicineViewModel: MedicineViewModel = viewModel()
+    navController: NavController,
+    medicineViewModel: MedicineViewModel
 ) {
     val medicines = medicineViewModel.allMedicines.observeAsState()
 
