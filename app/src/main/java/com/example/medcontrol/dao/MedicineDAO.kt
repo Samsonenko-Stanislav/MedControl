@@ -1,16 +1,15 @@
-package com.example.medcontrol.dao
-
 import androidx.room.*
 import com.example.medcontrol.model.Medicine
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface MedicineDao {
     @Query("SELECT * FROM medicines")
-    fun getAllMedicines(): List<Medicine>
+    fun getAllMedicines(): Flow<List<Medicine>>
 
     @Insert
-    fun addMedicine(medicine: Medicine)
+    suspend fun addMedicine(medicine: Medicine)
 
     @Delete
-    fun deleteMedicine(medicine: Medicine)
+    suspend fun deleteMedicine(medicine: Medicine)
 }
