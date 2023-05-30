@@ -10,10 +10,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.example.medcontrol.ViewModel.MedicineViewModel
+import com.example.medcontrol.createNotification
 import com.example.medcontrol.model.Medicine
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
@@ -27,7 +29,7 @@ fun AddMedicineScreen(
     val time = remember { mutableStateOf("") }
     val duration = remember { mutableStateOf(0) }
     val foodDependency = remember { mutableStateOf("") }
-
+    val context = LocalContext.current
     Scaffold(
         topBar = {
             TopAppBar(
@@ -53,8 +55,16 @@ fun AddMedicineScreen(
                         duration = duration.value,
                         foodDependency = foodDependency.value
                     )
+                    // Уведомление
+                    createNotification(
+                        context,
+                        medicine.name,
+                        medicine.time
+                    )
+
                     medicineViewModel.addMedicine(medicine)
                     navController.popBackStack()
+
                 }
             ) {
                 Icon(Icons.Filled.Save, contentDescription = "Save")
