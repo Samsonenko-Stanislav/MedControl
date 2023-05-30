@@ -35,8 +35,7 @@ fun AddMedicineScreen(
                 navigationIcon = {
                     IconButton(
                         onClick = {
-                            // Вернуться на предыдущий экран
-                            // Необходимо реализовать навигацию
+                            navController.popBackStack()
                         }
                     ) {
                         Icon(Icons.Filled.ArrowBack, contentDescription = "Back")
@@ -55,8 +54,7 @@ fun AddMedicineScreen(
                         foodDependency = foodDependency.value
                     )
                     medicineViewModel.addMedicine(medicine)
-                    // Вернуться на предыдущий экран
-                    // Необходимо реализовать навигацию
+                    navController.popBackStack()
                 }
             ) {
                 Icon(Icons.Filled.Save, contentDescription = "Save")

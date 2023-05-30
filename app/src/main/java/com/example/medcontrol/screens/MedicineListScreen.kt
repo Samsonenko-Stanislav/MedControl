@@ -35,8 +35,7 @@ fun MedicineListScreen(
         floatingActionButton = {
             FloatingActionButton(
                 onClick = {
-                    // Navigate to the medicine addition screen
-                    // Navigation implementation is required
+                    navController.navigate("medicine_add")
                 }
             ) {
                 Icon(Icons.Filled.Add, contentDescription = "Add Medicine")
@@ -67,5 +66,7 @@ fun MedicineListScreen(
                 }
             }
         }
+
+
     }
 }
