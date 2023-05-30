@@ -1,5 +1,6 @@
 package com.example.medcontrol.screens
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.*
@@ -17,6 +18,7 @@ import androidx.compose.runtime.livedata.observeAsState
 import androidx.navigation.NavController
 
 
+@SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
 fun MedicineListScreen(
     navController: NavController,

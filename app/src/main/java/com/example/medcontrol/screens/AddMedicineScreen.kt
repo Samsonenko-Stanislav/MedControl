@@ -12,13 +12,15 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavController
 import com.example.medcontrol.ViewModel.MedicineViewModel
 import com.example.medcontrol.model.Medicine
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
 fun AddMedicineScreen(
-    medicineViewModel: MedicineViewModel = viewModel()
+    medicineViewModel: MedicineViewModel = viewModel(),
+    navController: NavController
 ) {
     val name = remember { mutableStateOf("") }
     val dosage = remember { mutableStateOf("") }
