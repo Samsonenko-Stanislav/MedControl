@@ -1,5 +1,6 @@
 package com.example.medcontrol.screens
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
@@ -11,10 +12,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import androidx.navigation.NavController
 import com.example.medcontrol.ViewModel.MedicineViewModel
 import com.example.medcontrol.model.Medicine
 
+@SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
 fun AddMedicineScreen(
     medicineViewModel: MedicineViewModel = viewModel()
@@ -63,7 +64,8 @@ fun AddMedicineScreen(
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(16.dp),
+                .padding(16.dp)
+                .padding(horizontal = 16.dp), // Используем contentPadding здесь
             verticalArrangement = Arrangement.Top
         ) {
             OutlinedTextField(
