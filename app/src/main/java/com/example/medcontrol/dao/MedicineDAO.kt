@@ -13,4 +13,7 @@ interface MedicineDao {
 
     @Delete
     suspend fun deleteMedicine(medicine: Medicine)
+
+    @Update
+    suspend fun updateMedicine(medicine: Medicine)
 }

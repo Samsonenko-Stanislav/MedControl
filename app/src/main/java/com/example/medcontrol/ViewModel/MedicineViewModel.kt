@@ -22,5 +22,19 @@ class MedicineViewModel(private val medicineDao: MedicineDao) : ViewModel() {
         viewModelScope.launch(Dispatchers.IO) {
             medicineDao.deleteMedicine(medicine)
         }
+
+
+        }
+
+    fun updateMedicine(medicine: Medicine) {
+        viewModelScope.launch(Dispatchers.IO) {
+            medicineDao.updateMedicine(medicine)
+        }
+    }
+
+    fun getAllMedicines() {
+        viewModelScope.launch(Dispatchers.IO){
+            medicineDao.getAllMedicines()
+        }
     }
 }
