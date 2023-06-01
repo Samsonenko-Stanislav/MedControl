@@ -20,6 +20,7 @@ import com.example.medcontrol.ViewModel.MedicineViewModel
 import com.example.medcontrol.createNotification
 import com.example.medcontrol.model.FoodDependency
 import com.example.medcontrol.model.Medicine
+import java.time.LocalDate
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
@@ -59,7 +60,7 @@ fun AddMedicineScreen(
                         dosage = dosage.value,
                         time = time.value,
                         duration = duration.value,
-                        foodDependency = foodDependency.value
+                        foodDependency = foodDependency.value,
                     )
                     // Уведомление
                     createNotification(

@@ -2,6 +2,7 @@ package com.example.medcontrol.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.time.LocalDate
 
 @Entity(tableName = "medicines")
 data class Medicine(
@@ -10,5 +11,6 @@ data class Medicine(
     val dosage: String,
     val time: String,
     val duration: Int,
-    val foodDependency: String
+    val foodDependency: String,
+    val endDate: LocalDate
 )
