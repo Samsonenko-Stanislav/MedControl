@@ -12,5 +12,6 @@ data class Medicine(
     val time: String,
     val duration: Int,
     val foodDependency: String,
-    val endDate: LocalDate
+    val endDate: LocalDate,
+    val quantity: Int
 )
