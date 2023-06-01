@@ -66,6 +66,15 @@ fun MedicineListScreen(
                 }
             }
         }
+        LazyColumn {
+            items(medicines) { medicine ->
+                MedicineItem(
+                    medicine = medicine,
+                    onMedicineTaken = { isTaken ->
+                        medicineViewModel.updateMedicineTaken(medicine.id, isTaken)
+                    }
+                )
+            }
 
 
     }
